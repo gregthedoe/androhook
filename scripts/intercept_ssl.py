@@ -21,13 +21,13 @@ def main():
     description = "Intercept HTTPS traffic of a package and save to mitmproxy flow file"
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("package_name", help="Package's name we want to intercept")
-    parser.add_argument("--flow-filename", help="Mitmproxy's flow dump file name")
-    parser.add_argument("--saz-filename", help="Fiddler's SAZ file name")
+    parser.add_argument("--flow", help="Mitmproxy's flow dump file name")
+    parser.add_argument("--saz", help="Fiddler's SAZ file name")
     parser.add_argument("-q", "--quiet", action="store_true", default=False, help="Don't output flows to stdout")
     parser.add_argument("--inject-only-new", action="store_true", default=False,
                         help="Inject only to new packages")
     options = parser.parse_args()
-    intercept(options.package_name, options.flow_filename, options.saz_filename, options.quiet, options.inject_only_new)
+    intercept(options.package_name, options.flow, options.saz, options.quiet, options.inject_only_new)
 
 if __name__ == "__main__":
     main()
