@@ -1,3 +1,3 @@
-frida
-mitmproxy
+frida>=7.2.15
+mitmproxy>=0.17
 datetime
