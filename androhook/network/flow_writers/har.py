@@ -5,14 +5,14 @@ import json
 import sys
 
 from datetime import datetime
-from mitmproxy import flow, version
+from mitmproxy import flow#, version
 
 
 def create_har(flows):
     return {
         "log": {
             "version": "1.2",
-            "creator": {"name": "MITMPROXY", "version": version.VERSION},
+            "creator": {"name": "MITMPROXY", "version": "currently unknown"},
             "entries": [format_flow(fl) for fl in flows]
         }
     }
