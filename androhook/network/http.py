@@ -160,13 +160,14 @@ class HttpTransaction(object):
                                                               timestamp_ssl_setup=self._timestamp_ssl_setup
                                                               ))
 
-        server_conn = models.ServerConnection.from_state(dict(address=dict(address=self._dst_address, use_ipv6=False),
+        server_conn = models.ServerConnection.from_state(dict(ip_address=dict(address=self._src_address, use_ipv6=False),
+							      address=dict(address=self._dst_address, use_ipv6=False),
                                                               cert=None,
                                                               sni=None,
                                                               source_address=dict(address=self._src_address,
                                                                                   use_ipv6=False),
-                                                              peer_address=dict(address=self._src_address,
-                                                                                use_ipv6=False),
+                                                              #peer_address=dict(address=self._src_address,
+                                                              #                  use_ipv6=False),
                                                               ssl_established=True,
                                                               timestamp_start=self._response_timestamp_start,
                                                               timestamp_tcp_setup=self._timestamp_ssl_setup,

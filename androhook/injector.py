@@ -9,7 +9,7 @@ _RPC_INIT_TEMPLATE = Template("""\
                 (function () {
                 "use strict";
                 rpc.exports = {
-                    init() {
+                    init: function() {
                         $script
                     }
                 };

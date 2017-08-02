@@ -1,4 +1,4 @@
-from mitmproxy import tnetstring
+from mitmproxy.contrib import tnetstring
 
 
 class FlowWriter(object):

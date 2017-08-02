@@ -115,8 +115,8 @@ Interceptor.attach(Module.findExportByName(null, "SSL_set_fd"), {
         msg["fd"] = this.fd;
         msg["retval"] = retval;
         if (retval.toInt32() == 1) {
-            var localAddress = Socket.localAddress(this.fd);
-            var peerAddress = Socket.peerAddress(this.fd);
+            var localAddress = Socket.localAddress(this.fd.toInt32());
+            var peerAddress = Socket.peerAddress(this.fd.toInt32());
         } else {
             var localAddress = {};
             var peerAddress = {};
