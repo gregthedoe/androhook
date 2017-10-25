@@ -29,10 +29,10 @@ https://nodejs.org/en/download/current/
 ```
 git clone https://github.com/gregthedoe/androhook.git
 cd androhook
-pip install . 
+pip install -e . 
 
 # For SSL interception support, use:
-pip install .[ssl]
+pip install -e .[ssl]
 ```
 
 ## Usage
