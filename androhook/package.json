@@ -1,0 +1,22 @@
+{
+	"name": "androhook",
+	"version": "1.0.0",
+	"description": "",
+	"dependencies": {
+		"acorn": "^5.2.1",
+		"babel-core": "^6.26.0",
+		"babelify": "^8.0.0",
+		"cache-require-paths": "^0.3.0",
+		"cached-path-relative": "^1.0.1",
+		"core-js": "^2.5.1",
+		"frida-compile": "^5.1.0",
+		"resolve": "^1.5.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
