@@ -50,6 +50,15 @@ var $J = $J || function (obj) {
 		}
 	};
 
+	pub.asList = function () {
+		var len = JavaArray.getLength(priv.obj);
+		var ret = [];
+		for (var i = 0 ; i < len ; ++i) {
+			ret.push(JavaArray.get(priv.obj, i));
+		}
+		return ret;
+	};
+
 	pub.setFieldValue = function (fieldName, fieldValue) {
 		var field = pub.getField(fieldName);
 		var obj = pub.isStaticField(fieldName) ? null : priv.obj;
@@ -86,13 +95,17 @@ var $J = $J || function (obj) {
 	};
 
 	pub.cast = function (klass) {
-		if (typeof(klass) == 'string') {
-			Java.performNow(function () {
-				klass = Java.use(klass);
-			});
-			return pub.cast(klass);
+		if (priv.obj) {
+			if (typeof(klass) == 'string') {
+				Java.performNow(function () {
+					klass = Java.use(klass);
+				});
+				return pub.cast(klass);
+			} else {
+				return $J(Java.cast(priv.obj, klass));
+			}
 		} else {
-			return $J(Java.cast(priv.obj, klass));
+			return null;
 		}
 	};
 
